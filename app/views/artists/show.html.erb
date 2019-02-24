@@ -1,0 +1,20 @@
+    <div class="banner">
+<img class="ui large avatar image" src="https://loremflickr.com/420/240/<%= @artist.name %>?lock=11" />
+<div><h1 class="centered"><%= @artist.name %></h1></div>
+</div>
+    
+<table class="ui striped inverted table">
+  <tbody>
+<% @artist.songs.each do |song| %>
+<tr class="center aligned">
+        <td>
+<h2 class="right aligned"><%= song.name %>
+</td><td>
+<audio class="center aligned" src="/audios/rickroll.mp3" type="audio/mpeg" controls>
+Your Browers Doesnt Support Audio Files
+</audio></h2>
+</td>
+</tr>
+<% end%>
+</tbody>
+</table>

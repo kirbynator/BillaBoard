@@ -1,0 +1,12 @@
+<%= link_to "<<<HOME", admins_path %>
+<h1>Billboard</h1>
+
+<%= form_with model: @chart do |f| %>
+ <%= f.label :name %>
+  <%= f.text_field :name %>
+
+  <%= f.label :genre %>
+  <%= f.text_field :genre %>
+
+  <%= f.submit %>
+<% end %>

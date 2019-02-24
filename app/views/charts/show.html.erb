@@ -1,0 +1,30 @@
+<div class="banner">
+<img src="https://loremflickr.com/1020/240/<%= @chart.genre %>?lock=11" />
+<h1 class="centered"><%= @chart.name %></h1>
+<div class="ui divider"></div>
+</div>
+<div class="ui relaxed divided list">
+<% @artists.each do |artist| %>
+<% artist.songs.each do |song| %>
+<% @genres = [song[:genre].gsub(" ", "").split(",")] %>
+<% @genres.flatten! %>
+<% @genres.each do |genre| %>
+<% if genre == @chart[:genre] %>
+<div class="ui divider"></div>
+ <div class="center aligned item">
+<img class="ui medium avatar aligned image" src="https://loremflickr.com/420/240/<%= artist.name %>?lock=11" />
+<div class="content">
+<h2><%= song.name%></h2>
+<h4 class="description"><%=link_to artist.name, artist_path(artist) %></h4>
+<audio src="/audios/rickroll.mp3" type="audio/mpeg" controls>
+Your Browers Doesnt Support Audio Files
+</audio>
+</div>
+</div>
+<div class="ui divider"></div>
+  <% else %>
+<% end%>
+<% end%>
+<% end %>
+<% end%>
+</div>

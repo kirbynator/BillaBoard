@@ -1,0 +1,22 @@
+<h1>Welcome Admin <h1>
+<h5><%= link_to "Go Viewer Side", charts_path%><h5>
+<h3>Billboards</h3>
+<%= link_to 'New Billboard ', new_chart_path %>
+<ul>
+  <% @charts.each do |chart| %>
+    <li><%= chart.name %> <%= link_to 'edit', edit_chart_path(chart) %> <%= link_to 'delete', chart_path(chart), method: :delete %></li>
+  <% end %>
+</ul>
+
+<h3>Aritists</h3>
+<%= link_to 'New Artist ', new_artist_path %>
+<ul>
+  <% @artists.each do |artist| %>
+    <li><%= artist.name %> <%= link_to 'edit', edit_artist_path(artist) %> <%= link_to 'delete', artist_path(artist), method: :delete %></li>
+  <% end %>
+</ul>
+
+
+
+
+

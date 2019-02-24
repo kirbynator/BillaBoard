@@ -1,0 +1,6 @@
+<h1> BillBoards</h1>
+<% @charts.each do |chart| %>
+<div class="ui horizontal divider">
+<h2><%= link_to chart.name, chart %></h2>
+</div>
+<% end %>
