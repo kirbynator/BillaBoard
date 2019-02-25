@@ -1,6 +1,21 @@
-<h1> BillBoards</h1>
+ <div class="ui block inverted header" id="white">
+    <%= link_to charts_path do%>
+<h1>BillBoards</h2>
+    <% end %>
+    </div>
+
 <% @charts.each do |chart| %>
 <div class="ui horizontal divider">
-<h2><%= link_to chart.name, chart %></h2>
+<div class="image center fluid">
+<div class="ui grey black ribbon label">
+<%= link_to chart do %>
+<h1><%=chart.name%></h1>
+<% end %>
+<%= link_to chart do %>
+<img src="https://loremflickr.com/1020/240/<%= chart.genre %>?lock=11" />
+<% end %>
+</div>
+</div>
+</div>
 </div>
 <% end %>

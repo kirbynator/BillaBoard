@@ -1,16 +1,22 @@
+ <div class="ui block inverted header" id="white">
+    <%= link_to charts_path do%>
+<h1>BillBoards</h2>
+    <% end %>
+    </div>
+    </div>
     <div class="banner">
-<img class="ui large avatar image" src="https://loremflickr.com/420/240/<%= @artist.name %>?lock=11" />
+<img class="ui large avatar image" src="https://loremflickr.com/420/240/band,music?lock=<%= @artist.id + 10 %>" />
 <div><h1 class="centered"><%= @artist.name %></h1></div>
 </div>
     
 <table class="ui striped inverted table">
-  <tbody>
+  <tbody class="center aligned">
 <% @artist.songs.each do |song| %>
-<tr class="center aligned">
-        <td>
-<h2 class="right aligned"><%= song.name %>
+<tr>
+        <td class="right aligned">
+<h2><%= song.name %></h2>
 </td><td>
-<audio class="center aligned" src="/audios/rickroll.mp3" type="audio/mpeg" controls>
+<h2><audio class="center aligned" src="/audios/rickroll.mp3" type="audio/mpeg" controls>
 Your Browers Doesnt Support Audio Files
 </audio></h2>
 </td>
